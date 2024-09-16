@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import axios from "../../utils/axios";
-import requests from "../../utils/requests";
+import axios from "../../utils/Axios";
+import requests from "../../utils/reqests";
 import { useEffect } from "react";
-import "./banner.css"
+import "./banner.css";
 function Banner() {
   const [movie, setMovie] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(requests.fetchNetflixOriginal);
+        const response = await axios.get(requests.fetchNetflixOriginals);
         console.log(response);
         setMovie(
           response.data.results[
