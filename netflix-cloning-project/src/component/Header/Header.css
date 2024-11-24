@@ -1,58 +1,94 @@
-*{
+/* Global reset */
+* {
     color: white;
     margin: 0;
     padding: 0;
-    block-size: border-box;
+    box-sizing: border-box;
 }
+
+body, html {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .all-header {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  background-color: rgb(20, 20, 20);
-  /* background-color: transparent; */
-  transition: all 0.5s;
-  z-index: 1;
-  transition-timing-function: ease-in;
-  /* background-color: red; */
-}
-.header-container {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header-left ul {
-  display: flex;
-  align-content: center;
-  list-style-type: none;
-  justify-content: center;
-  
-}
-.header-right ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  padding-left: 13px;
-  
-}
-.header-left{
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    height: 10vh;
+    background-color: rgb(20, 20, 20);
+    transition: all 0.5s;
+    z-index: 1;
+    transition-timing-function: ease-in;
 }
-.header-note{
+
+.header-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header Left (Logo and Navigation Links) */
+.header-left ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.header-note {
     margin-top: 20px;
     padding-left: 20px;
 }
-.header-note li{
+
+.header-note li {
     padding-left: 13px;
     margin-left: 15px;
 }
-.header-right ul li{
-padding-left: 15px;
+
+/* Header Right (Icons) */
+.header-right ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 13px;
+}
+
+.header-right ul li {
+    padding-left: 15px;
+}
+
+/* Responsive Adjustments */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .header-note li {
+        margin-left: 8px;
+        padding-left: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .header-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .header-left ul {
+        flex-direction: row; /* Align items in a row for mobile */
+    }
+
+    /* Hide all header links except Netflix logo and Home */
+    .header-note {
+        display: none !important;
+    }
+
+    .header-right ul li {
+        padding-left: 8px;
+    }
 }
